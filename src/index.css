@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: Inter, system-ui, sans-serif; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #f7f8ff; }
+button, input, textarea, select { font: inherit; }
+::selection { background: #d9d3ff; color: #312e81; }
+
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .glass { @apply border border-white/70 bg-white/75 shadow-soft backdrop-blur-xl; }
+  .gradient-text { @apply bg-gradient-to-r from-violet-600 via-fuchsia-500 to-orange-400 bg-clip-text text-transparent; }
+  .btn-primary { @apply inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-violet-600 to-fuchsia-500 px-5 py-3 font-semibold text-white shadow-lg shadow-violet-200 transition duration-300 hover:-translate-y-0.5 hover:shadow-xl; }
+  .btn-secondary { @apply inline-flex items-center justify-center rounded-2xl border border-violet-200 bg-white px-5 py-3 font-semibold text-violet-700 transition duration-300 hover:-translate-y-0.5 hover:border-violet-300 hover:bg-violet-50; }
+  .field { @apply w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-violet-400 focus:ring-4 focus:ring-violet-100; }
+  .section-pad { @apply py-16 sm:py-20 lg:py-24; }
+}
+
+.orb { position: absolute; border-radius: 999px; filter: blur(2px); opacity: .55; animation: float 8s ease-in-out infinite; }
+.orb-a { width: 180px; height: 180px; background: #c4b5fd; top: 10%; left: -70px; }
+.orb-b { width: 220px; height: 220px; background: #fed7aa; right: -80px; bottom: 5%; animation-delay: -2s; }
+@keyframes float { 0%,100%{ transform:translate3d(0,0,0) } 50%{ transform:translate3d(0,-24px,0) } }
+
+.fade-grid { background-image: linear-gradient(rgba(109,93,252,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(109,93,252,.055) 1px, transparent 1px); background-size: 32px 32px; }
+.hero-video { object-fit: cover; object-position: center; }
+.hero-overlay { background: linear-gradient(110deg, rgba(248,247,255,.96) 0%, rgba(248,247,255,.82) 40%, rgba(248,247,255,.28) 75%, rgba(248,247,255,.55) 100%); }
+@media (max-width: 768px) { .hero-overlay { background: linear-gradient(180deg, rgba(248,247,255,.94), rgba(248,247,255,.76)); } }
