@@ -1,7 +1,31 @@
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ServiceCard from '../components/ServiceCard'
 import { services } from '../data'
+
+const reviewCards = [
+  { name: 'Arun Kumar', location: 'Chennai', image: '/images/arun-kumar.jpg', category: 'House Shifting', categoryClass: 'bg-violet-50 text-violet-700', borderClass: 'from-violet-500 to-fuchsia-500', text: '“SHIFT made our house move much easier. The enquiry process was simple and the communication was clear.”' },
+  { name: 'Meera S', location: 'Coimbatore', image: '/images/meera-s.jpeg', category: 'Office Relocation', categoryClass: 'bg-fuchsia-50 text-fuchsia-700', borderClass: 'from-fuchsia-500 to-violet-500', text: '“We needed to relocate our office without unnecessary delays. SHIFT helped us organize everything clearly.”' },
+  { name: 'Rahul Menon', location: 'Kochi', image: '/images/rahul-menon.jpg', category: 'Furniture Moving', categoryClass: 'bg-orange-50 text-orange-700', borderClass: 'from-orange-500 to-fuchsia-500', text: '“The booking process was very convenient. I could submit my moving requirement and track it easily.”' },
+]
+
+function ReviewCard({ review }) {
+  return (
+    <motion.article initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }} whileHover={{ y: -8, transition: { duration: 0.25 } }} className="group flex h-full min-h-[270px] flex-col rounded-3xl border border-white/90 bg-white/90 p-5 shadow-[0_15px_40px_rgba(76,29,149,0.08)] backdrop-blur-xl transition-shadow duration-300 hover:shadow-[0_25px_55px_rgba(76,29,149,0.15)] sm:p-6">
+      <div className="flex items-center gap-3 sm:gap-4">
+        <div className={`relative h-12 w-12 shrink-0 overflow-hidden rounded-2xl bg-gradient-to-br ${review.borderClass} p-[2px] shadow-md sm:h-14 sm:w-14`}>
+          <div className="h-full w-full overflow-hidden rounded-[14px] bg-slate-100">
+            <img src={review.image} alt={review.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" onError={(event) => { event.currentTarget.style.display = 'none' }} />
+          </div>
+        </div>
+        <div className="min-w-0"><h3 className="truncate text-sm font-black text-slate-900 sm:text-base">{review.name}</h3><p className="mt-0.5 text-xs font-medium text-slate-500 sm:text-sm">{review.location}</p></div>
+      </div>
+      <div className="my-5 h-px w-full bg-gradient-to-r from-violet-100 via-slate-100 to-orange-100" />
+      <div className="flex flex-1 flex-col"><p className="text-sm leading-7 text-slate-600 sm:text-[15px] sm:leading-7">{review.text}</p><div className="mt-auto pt-6"><span className={`inline-flex rounded-full px-3 py-1.5 text-[10px] font-extrabold sm:text-[11px] ${review.categoryClass}`}>{review.category}</span></div></div>
+    </motion.article>
+  )
+}
 
 const heroContainer = {
   hidden: {},
@@ -33,6 +57,17 @@ const floatingAnimation = {
 }
 
 export default function Home() {
+  const [reviewPage, setReviewPage] = useState(0)
+  const [reviewDirection, setReviewDirection] = useState(1)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setReviewDirection(1)
+      setReviewPage((previous) => (previous + 1) % reviewCards.length)
+    }, 2000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <main className="w-full overflow-hidden">
 
@@ -1459,6 +1494,48 @@ export default function Home() {
         </div>
 
       </section>
+
+<section className="relative w-full overflow-hidden bg-gradient-to-br from-violet-50 via-white to-orange-50 px-4 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-24">
+  <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-violet-300/20 blur-3xl sm:h-96 sm:w-96" />
+  <div className="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-orange-300/20 blur-3xl sm:h-96 sm:w-96" />
+  <div className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-fuchsia-200/10 blur-3xl" />
+
+  <div className="relative mx-auto w-full max-w-7xl">
+    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }} className="mx-auto max-w-3xl text-center">
+      <span className="inline-flex rounded-full border border-violet-200 bg-white/90 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.18em] text-violet-700 shadow-sm sm:px-5 sm:text-xs">Customer Reviews</span>
+      <h2 className="mt-5 text-3xl font-black leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">Trusted by customers<span className="mt-1 block bg-gradient-to-r from-violet-600 via-fuchsia-500 to-orange-500 bg-clip-text text-transparent">for their next move.</span></h2>
+      <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">See what customers say about their experience with SHIFT relocation services.</p>
+      <motion.div initial={{ width: 0 }} whileInView={{ width: 80 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} className="mx-auto mt-6 h-1 rounded-full bg-gradient-to-r from-violet-500 via-fuchsia-500 to-orange-400" />
+    </motion.div>
+
+    <div className="relative mt-10 sm:mt-12">
+      <div className="overflow-hidden px-1 py-2">
+        <AnimatePresence mode="wait" custom={reviewDirection}>
+          <motion.div key={reviewPage} custom={reviewDirection} variants={{ enter: (direction) => ({ opacity: 0, x: direction > 0 ? 90 : -90 }), center: { opacity: 1, x: 0 }, exit: (direction) => ({ opacity: 0, x: direction > 0 ? -90 : 90 }) }} initial="enter" animate="center" exit="exit" transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }} drag="x" dragConstraints={{ left: 0, right: 0 }} dragElastic={0.08} onDragEnd={(event, info) => { if (info.offset.x < -60) { setReviewDirection(1); setReviewPage((previous) => (previous + 1) % reviewCards.length) } else if (info.offset.x > 60) { setReviewDirection(-1); setReviewPage((previous) => (previous - 1 + reviewCards.length) % reviewCards.length) } }} className="cursor-grab active:cursor-grabbing">
+            <div className="grid grid-cols-1 gap-5 sm:hidden"><ReviewCard review={reviewCards[reviewPage]} /></div>
+            <div className="hidden grid-cols-2 gap-6 sm:grid lg:hidden"><ReviewCard review={reviewCards[reviewPage]} /><ReviewCard review={reviewCards[(reviewPage + 1) % reviewCards.length]} /></div>
+            <div className="hidden grid-cols-3 gap-7 lg:grid">{reviewCards.map((review) => <ReviewCard key={review.name} review={review} />)}</div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <button type="button" onClick={() => { setReviewDirection(-1); setReviewPage((previous) => (previous - 1 + reviewCards.length) % reviewCards.length) }} className="absolute left-0 top-1/2 z-20 hidden h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-violet-200 bg-white/95 text-xl font-bold text-violet-700 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-violet-50 lg:flex" aria-label="Previous review">‹</button>
+      <button type="button" onClick={() => { setReviewDirection(1); setReviewPage((previous) => (previous + 1) % reviewCards.length) }} className="absolute right-0 top-1/2 z-20 hidden h-11 w-11 translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-violet-200 bg-white/95 text-xl font-bold text-violet-700 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-violet-50 lg:flex" aria-label="Next review">›</button>
+    </div>
+
+    <div className="mt-6 flex items-center justify-center gap-2">
+      {reviewCards.map((review, index) => <button key={review.name} type="button" onClick={() => { setReviewDirection(index >= reviewPage ? 1 : -1); setReviewPage(index) }} aria-label={`Show review ${index + 1}`} className={`h-2.5 rounded-full transition-all duration-300 ${index === reviewPage ? 'w-8 bg-gradient-to-r from-violet-600 to-orange-500' : 'w-2.5 bg-slate-300 hover:bg-violet-300'}`} />)}
+    </div>
+
+    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.65, delay: 0.15, ease: [0.22, 1, 0.36, 1] }} className="relative mt-8 overflow-hidden rounded-3xl bg-gradient-to-br from-[#07111F] via-[#101B32] to-[#4C1D95] p-6 shadow-[0_20px_50px_rgba(15,23,42,0.18)] sm:mt-10 sm:p-8 lg:p-10">
+      <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-violet-500/20 blur-3xl" />
+      <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="max-w-xl"><p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-violet-300 sm:text-xs">Ready to move?</p><h3 className="mt-2 text-2xl font-black leading-tight text-white sm:text-3xl lg:text-4xl">Let's make your next move easier.</h3><p className="mt-2 text-sm leading-6 text-slate-300">Tell us what you need and let SHIFT handle the relocation process.</p></div>
+        <Link to="/booking" className="inline-flex w-full shrink-0 items-center justify-center rounded-2xl bg-white px-6 py-3.5 text-sm font-black text-slate-900 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-violet-50 sm:w-auto">Book a Move</Link>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       {/* =========================================================
           WORKFLOW SECTION

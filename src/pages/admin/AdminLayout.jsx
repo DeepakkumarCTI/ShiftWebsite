@@ -74,13 +74,7 @@ export default function AdminLayout() {
                     {/* DESKTOP ACTIONS */}
                     <div className="hidden shrink-0 items-center gap-3 sm:flex">
 
-                        <div className="hidden items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 md:flex">
-                            <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.7)]" />
-
-                            <span className="text-[10px] font-bold text-white/60">
-                                Admin Online
-                            </span>
-                        </div>
+                       
 
                         <button
                             type="button"
@@ -226,13 +220,7 @@ export default function AdminLayout() {
                                     </div>
                                 </div>
 
-                                <div className="mt-4 flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5">
-                                    <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400" />
-
-                                    <span className="text-[10px] font-bold text-white/60">
-                                        System Active
-                                    </span>
-                                </div>
+                                
 
                                 <button
                                     type="button"

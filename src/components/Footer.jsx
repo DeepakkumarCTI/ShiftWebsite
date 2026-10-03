@@ -235,7 +235,7 @@ export default function Footer() {
 
                                 <div>
 
-                                    <p className="mb-0.5 text-[8px] font-bold uppercase tracking-wider text-orange-400">
+                                    <p className="mb-0.5 text-[12px] font-bold uppercase tracking-wider text-orange-400">
                                         Address
                                     </p>
 
@@ -254,7 +254,7 @@ export default function Footer() {
 
                                 <div>
 
-                                    <p className="mb-0.5 text-[8px] font-bold uppercase tracking-wider text-orange-400">
+                                    <p className="mb-0.5 text-[12px] font-bold uppercase tracking-wider text-orange-400">
                                         Phone
                                     </p>
 
@@ -272,7 +272,7 @@ export default function Footer() {
 
                                 <div>
 
-                                    <p className="mb-0.5 text-[8px] font-bold uppercase tracking-wider text-orange-400">
+                                    <p className="mb-0.5 text-[12px] font-bold uppercase tracking-wider text-orange-400">
                                         Email
                                     </p>
 
@@ -290,7 +290,7 @@ export default function Footer() {
 
                                 <div>
 
-                                    <p className="mb-0.5 text-[8px] font-bold uppercase tracking-wider text-orange-400">
+                                    <p className="mb-0.5 text-[12px] font-bold uppercase tracking-wider text-orange-400">
                                         Service Areas
                                     </p>
 

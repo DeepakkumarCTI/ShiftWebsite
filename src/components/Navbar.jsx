@@ -6,8 +6,9 @@ const links = [
   ['/', 'Home'],
   ['/about', 'About Us'],
   ['/services', 'Services'],
+   ['/booking', 'Booking'],
   ['/contact', 'Contact'],
-  ['/booking', 'Booking'],
+ 
 ]
 
 export default function Navbar() {

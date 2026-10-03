@@ -25,5 +25,5 @@ export function seedData() {
   if (!enquiries) setData(KEYS.enquiries, [])
 
   const admin = getData(KEYS.admin, null)
-  if (!admin) setData(KEYS.admin, { email: 'admin@shift.com', password: 'admin123', name: 'SHIFT Admin' })
+  if (!admin) setData(KEYS.admin, { email: 'admin@gmail.com', password: 'admin123', name: 'SHIFT Admin' })
 }

@@ -36,31 +36,31 @@ export default function MyBookings() {
                 PAGE HEADER
             ===================================================== */}
             <section className="relative overflow-hidden bg-gradient-to-br from-[#07111F] via-[#101B32] to-[#312E81]">
-                {/* Decorative glow */}
-                <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-violet-500/20 blur-3xl" />
-                <div className="absolute -bottom-28 -right-20 h-72 w-72 rounded-full bg-orange-500/15 blur-3xl" />
 
-                <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+                <div className="absolute -left-24 -top-24 h-56 w-56 rounded-full bg-violet-500/20 blur-3xl" />
+                <div className="absolute -bottom-24 -right-20 h-64 w-64 rounded-full bg-orange-500/15 blur-3xl" />
+
+                <div className="relative mx-auto max-w-7xl px-4 py-7 sm:px-6 sm:py-9 lg:px-10 lg:py-11">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 0.5 }}
                         className="max-w-3xl"
                     >
-                        <div className="mb-3 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1.5 backdrop-blur-md">
-                            <span className="text-[9px] font-extrabold uppercase tracking-[0.22em] text-orange-400 sm:text-[10px]">
+                        <div className="mb-2 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 backdrop-blur-md">
+                            <span className="text-[8px] font-extrabold uppercase tracking-[0.22em] text-orange-400 sm:text-[9px]">
                                 Customer Area
                             </span>
                         </div>
 
-                        <h1 className="text-3xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+                        <h1 className="text-2xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
                             Track your
                             <span className="block bg-gradient-to-r from-violet-300 via-fuchsia-300 to-orange-300 bg-clip-text text-transparent">
                                 relocation requests.
                             </span>
                         </h1>
 
-                        <p className="mt-3 max-w-2xl text-xs leading-5 text-white/65 sm:text-sm sm:leading-6 lg:text-base">
+                        <p className="mt-2 max-w-2xl text-[11px] leading-5 text-white/65 sm:text-xs sm:leading-5 lg:text-sm">
                             View your submitted booking requests, check their
                             current status and keep track of your relocation
                             details in one place.
@@ -68,9 +68,9 @@ export default function MyBookings() {
 
                         <motion.div
                             initial={{ width: 0 }}
-                            animate={{ width: 90 }}
-                            transition={{ duration: 0.8, delay: 0.3 }}
-                            className="mt-5 h-1 rounded-full bg-gradient-to-r from-violet-400 via-fuchsia-400 to-orange-400"
+                            animate={{ width: 70 }}
+                            transition={{ duration: 0.7, delay: 0.2 }}
+                            className="mt-4 h-0.5 rounded-full bg-gradient-to-r from-violet-400 via-fuchsia-400 to-orange-400"
                         />
                     </motion.div>
                 </div>
@@ -79,13 +79,13 @@ export default function MyBookings() {
             {/* =====================================================
                 MAIN CONTENT
             ===================================================== */}
-            <main className="px-3 py-6 sm:px-6 sm:py-10 lg:px-10 lg:py-12">
+            <main className="px-3 py-4 sm:px-5 sm:py-6 lg:px-8 lg:py-8">
                 <div className="mx-auto max-w-7xl">
 
                     {/* =================================================
                         SUMMARY CARDS
                     ================================================= */}
-                    <section className="grid grid-cols-2 gap-2.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+                    <section className="grid grid-cols-2 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4">
 
                         <SummaryCard
                             number="01"
@@ -118,26 +118,28 @@ export default function MyBookings() {
                             text="Not approved"
                             gradient="from-rose-500 to-pink-500"
                         />
+
                     </section>
 
                     {/* =================================================
                         CONTENT HEADER / SEARCH
                     ================================================= */}
-                    <section className="mt-6 overflow-hidden rounded-[1.5rem] border border-violet-100 bg-white shadow-[0_12px_40px_rgba(76,29,149,0.07)] sm:mt-8 sm:rounded-[2rem]">
+                    <section className="mt-4 overflow-hidden rounded-2xl border border-violet-100 bg-white shadow-[0_8px_28px_rgba(76,29,149,0.06)] sm:mt-5 sm:rounded-3xl">
 
-                        <div className="border-b border-slate-100 bg-gradient-to-r from-white via-violet-50/40 to-orange-50/40 p-4 sm:p-6">
-                            <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+                        <div className="border-b border-slate-100 bg-gradient-to-r from-white via-violet-50/40 to-orange-50/40 p-3 sm:p-4 lg:p-5">
+
+                            <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
 
                                 <div>
-                                    <p className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-violet-500 sm:text-[10px]">
+                                    <p className="text-[8px] font-extrabold uppercase tracking-[0.2em] text-violet-500 sm:text-[9px]">
                                         Booking Management
                                     </p>
 
-                                    <h2 className="mt-1 text-xl font-black text-slate-900 sm:text-2xl">
+                                    <h2 className="mt-0.5 text-lg font-black text-slate-900 sm:text-xl">
                                         My relocation requests
                                     </h2>
 
-                                    <p className="mt-1 text-[10px] leading-5 text-slate-500 sm:text-xs">
+                                    <p className="mt-0.5 text-[9px] leading-4 text-slate-500 sm:text-[10px]">
                                         Search your booking ID, service or
                                         location to quickly find a request.
                                     </p>
@@ -145,14 +147,15 @@ export default function MyBookings() {
 
                                 <Link
                                     to="/booking"
-                                    className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-violet-600 via-fuchsia-600 to-orange-500 px-4 py-2.5 text-xs font-bold text-white shadow-lg shadow-violet-500/20 transition-all duration-300 hover:-translate-y-0.5 sm:w-auto sm:px-5 sm:py-3 sm:text-sm"
+                                    className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-violet-600 via-fuchsia-600 to-orange-500 px-4 py-2 text-[10px] font-bold text-white shadow-md shadow-violet-500/20 transition-all duration-300 hover:-translate-y-0.5 sm:w-auto sm:px-4 sm:py-2.5 sm:text-xs"
                                 >
                                     Create New Booking
                                 </Link>
                             </div>
 
                             {/* SEARCH */}
-                            <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:items-center">
+                            <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center">
+
                                 <div className="relative flex-1">
                                     <input
                                         type="text"
@@ -165,12 +168,12 @@ export default function MyBookings() {
                                     />
                                 </div>
 
-                                <div className="flex shrink-0 items-center justify-between rounded-xl border border-slate-200 bg-white px-3 py-2.5 sm:px-4">
-                                    <span className="text-[9px] font-bold uppercase tracking-wider text-slate-400">
+                                <div className="flex shrink-0 items-center justify-between rounded-lg border border-slate-200 bg-white px-3 py-2 sm:px-3.5">
+                                    <span className="text-[8px] font-bold uppercase tracking-wider text-slate-400">
                                         Showing
                                     </span>
 
-                                    <span className="ml-2 text-xs font-black text-violet-600">
+                                    <span className="ml-2 text-[10px] font-black text-violet-600">
                                         {list.length}
                                     </span>
                                 </div>
@@ -180,28 +183,27 @@ export default function MyBookings() {
                         {/* =================================================
                             BOOKINGS LIST
                         ================================================= */}
-                        <div className="p-3 sm:p-5 lg:p-6">
-
-                            {list.length === 0 ? (
-                                <EmptyState search={q} />
-                            ) : (
-                                <div className="grid gap-4 sm:gap-5">
-                                    {list.map((booking, index) => (
-                                        <BookingCard
-                                            key={booking.id}
-                                            booking={booking}
-                                            index={index}
-                                        />
-                                    ))}
-                                </div>
-                            )}
-                        </div>
+                        <div className="p-2.5 sm:p-4 lg:p-5">
+    {list.length === 0 ? (
+        <EmptyState search={q} />
+    ) : (
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {list.map((booking, index) => (
+                <BookingCard
+                    key={booking.id}
+                    booking={booking}
+                    index={index}
+                />
+            ))}
+        </div>
+    )}
+</div>
                     </section>
 
                     {/* =================================================
                         BOTTOM INFORMATION
                     ================================================= */}
-                    <section className="mt-6 grid gap-4 sm:mt-8 lg:grid-cols-3">
+                    <section className="mt-4 grid gap-3 sm:mt-5 lg:grid-cols-3">
 
                         <InfoCard
                             number="01"
@@ -226,19 +228,23 @@ export default function MyBookings() {
 
                     </section>
 
-                    {/* FINAL CTA */}
-                    <section className="mt-6 overflow-hidden rounded-[1.5rem] bg-gradient-to-r from-[#07111F] via-[#172554] to-violet-800 p-5 shadow-xl sm:mt-8 sm:rounded-[2rem] sm:p-7">
-                        <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                    {/* =================================================
+                        FINAL CTA
+                    ================================================= */}
+                    <section className="mt-4 overflow-hidden rounded-2xl bg-gradient-to-r from-[#07111F] via-[#172554] to-violet-800 p-4 shadow-lg sm:mt-5 sm:rounded-3xl sm:p-5">
+
+                        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+
                             <div>
-                                <p className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-orange-400 sm:text-[10px]">
+                                <p className="text-[8px] font-extrabold uppercase tracking-[0.2em] text-orange-400 sm:text-[9px]">
                                     Ready for another move?
                                 </p>
 
-                                <h2 className="mt-1 text-lg font-black text-white sm:text-2xl">
+                                <h2 className="mt-0.5 text-base font-black text-white sm:text-xl">
                                     Start a new relocation request.
                                 </h2>
 
-                                <p className="mt-1 text-[10px] leading-5 text-white/55 sm:text-xs">
+                                <p className="mt-0.5 text-[9px] leading-4 text-white/55 sm:text-[10px]">
                                     Submit your requirements and let SHIFT
                                     organize your request.
                                 </p>
@@ -246,12 +252,14 @@ export default function MyBookings() {
 
                             <Link
                                 to="/booking"
-                                className="inline-flex w-full shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-orange-400 to-orange-500 px-5 py-3 text-xs font-bold text-white shadow-lg shadow-orange-950/20 transition-all duration-300 hover:-translate-y-0.5 sm:w-auto sm:text-sm"
+                                className="inline-flex w-full shrink-0 items-center justify-center rounded-lg bg-gradient-to-r from-orange-400 to-orange-500 px-4 py-2.5 text-[10px] font-bold text-white shadow-md shadow-orange-950/20 transition-all duration-300 hover:-translate-y-0.5 sm:w-auto sm:text-xs"
                             >
                                 Book a Move
                             </Link>
+
                         </div>
                     </section>
+
                 </div>
             </main>
         </div>
@@ -271,29 +279,31 @@ function SummaryCard({
 }) {
     return (
         <motion.div
-            whileHover={{ y: -4 }}
-            className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${gradient} p-3.5 text-white shadow-lg sm:rounded-3xl sm:p-5`}
+            whileHover={{ y: -2 }}
+            className={`relative overflow-hidden rounded-xl bg-gradient-to-br ${gradient} p-2.5 text-white shadow-md sm:rounded-2xl sm:p-3.5`}
         >
-            <div className="absolute -right-8 -top-8 h-20 w-20 rounded-full bg-white/10 blur-xl" />
+            <div className="absolute -right-7 -top-7 h-16 w-16 rounded-full bg-white/10 blur-xl" />
 
             <div className="relative">
+
                 <div className="flex items-center justify-between">
-                    <span className="text-[8px] font-black tracking-wider text-white/50 sm:text-[9px]">
+                    <span className="text-[7px] font-black tracking-wider text-white/50 sm:text-[8px]">
                         {number}
                     </span>
 
-                    <span className="text-2xl font-black sm:text-3xl">
+                    <span className="text-xl font-black sm:text-2xl">
                         {value}
                     </span>
                 </div>
 
-                <h3 className="mt-2 text-[10px] font-black sm:text-sm">
+                <h3 className="mt-1.5 text-[9px] font-black sm:text-xs">
                     {title}
                 </h3>
 
-                <p className="mt-0.5 text-[8px] text-white/65 sm:text-[10px]">
+                <p className="mt-0.5 text-[7px] text-white/65 sm:text-[9px]">
                     {text}
                 </p>
+
             </div>
         </motion.div>
     )
@@ -327,47 +337,52 @@ function BookingCard({ booking, index }) {
 
     return (
         <motion.article
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{
-                duration: 0.45,
-                delay: Math.min(index * 0.06, 0.3),
+                duration: 0.4,
+                delay: Math.min(index * 0.05, 0.25),
             }}
-            whileHover={{ y: -3 }}
-            className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-[0_15px_35px_rgba(76,29,149,0.09)] sm:rounded-3xl"
+            whileHover={{ y: -2 }}
+            className="relative overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-[0_10px_25px_rgba(76,29,149,0.08)] sm:rounded-2xl"
         >
+
             {/* TOP STATUS LINE */}
             <div
-                className={`h-1 w-full bg-gradient-to-r ${statusStyles.line}`}
+                className={`h-0.5 w-full bg-gradient-to-r ${statusStyles.line}`}
             />
 
-            <div className="p-4 sm:p-5 lg:p-6">
+            <div className="p-3 sm:p-4 lg:p-5">
 
                 {/* TOP ROW */}
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div className="flex flex-col gap-2.5 sm:flex-row sm:items-start sm:justify-between">
 
                     <div className="min-w-0">
-                        <div className="flex flex-wrap items-center gap-2">
-                            <p className="text-[9px] font-black uppercase tracking-[0.16em] text-violet-500 sm:text-[10px]">
+
+                        <div className="flex flex-wrap items-center gap-1.5">
+
+                            <p className="text-[8px] font-black uppercase tracking-[0.16em] text-violet-500 sm:text-[9px]">
                                 {booking.id}
                             </p>
 
-                            <span className="h-1 w-1 rounded-full bg-slate-300" />
+                            <span className="h-0.5 w-0.5 rounded-full bg-slate-300" />
 
-                            <span className="text-[9px] text-slate-400 sm:text-[10px]">
+                            <span className="text-[8px] text-slate-400 sm:text-[9px]">
                                 Booking Request
                             </span>
+
                         </div>
 
-                        <h3 className="mt-1 text-base font-black text-slate-900 sm:text-xl">
+                        <h3 className="mt-0.5 text-sm font-black text-slate-900 sm:text-lg">
                             {booking.service}
                         </h3>
+
                     </div>
 
                     {/* STATUS */}
                     <span
-                        className={`inline-flex w-fit items-center gap-1.5 rounded-full border px-2.5 py-1 text-[9px] font-bold sm:px-3 sm:py-1.5 sm:text-[10px] ${statusStyles.badge}`}
+                        className={`inline-flex w-fit items-center gap-1 rounded-full border px-2 py-1 text-[8px] font-bold sm:px-2.5 sm:text-[9px] ${statusStyles.badge}`}
                     >
                         <span
                             className={`h-1.5 w-1.5 rounded-full ${statusStyles.dot}`}
@@ -375,15 +390,18 @@ function BookingCard({ booking, index }) {
 
                         {status}
                     </span>
+
                 </div>
 
                 {/* ROUTE */}
-                <div className="mt-4 rounded-xl border border-slate-100 bg-slate-50/80 p-3 sm:mt-5 sm:rounded-2xl sm:p-4">
-                    <p className="mb-2 text-[8px] font-extrabold uppercase tracking-[0.18em] text-slate-400 sm:text-[9px]">
+                <div className="mt-3 rounded-lg border border-slate-100 bg-slate-50/80 p-2.5 sm:mt-3.5 sm:rounded-xl sm:p-3">
+
+                    <p className="mb-1.5 text-[7px] font-extrabold uppercase tracking-[0.18em] text-slate-400 sm:text-[8px]">
                         Relocation Route
                     </p>
 
-                    <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+                    <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-2">
+
                         <LocationBox
                             label="Pickup"
                             value={booking.pickup}
@@ -391,7 +409,7 @@ function BookingCard({ booking, index }) {
 
                         <div className="hidden h-px flex-1 bg-gradient-to-r from-violet-200 via-fuchsia-200 to-orange-200 sm:block" />
 
-                        <div className="flex h-6 w-6 shrink-0 items-center justify-center self-center rounded-full bg-violet-100 text-[10px] font-black text-violet-600 sm:h-7 sm:w-7">
+                        <div className="flex h-5 w-5 shrink-0 items-center justify-center self-center rounded-full bg-violet-100 text-[8px] font-black text-violet-600 sm:h-6 sm:w-6">
                             →
                         </div>
 
@@ -402,11 +420,13 @@ function BookingCard({ booking, index }) {
                             value={booking.destination}
                             right
                         />
+
                     </div>
                 </div>
 
                 {/* DETAILS */}
-                <div className="mt-3 grid grid-cols-2 gap-2.5 sm:mt-4 sm:grid-cols-3 sm:gap-3">
+                <div className="mt-2 grid grid-cols-2 gap-2 sm:mt-3 sm:grid-cols-3">
+
                     <DetailBox
                         label="Preferred Date"
                         value={booking.date || 'Not specified'}
@@ -427,16 +447,18 @@ function BookingCard({ booking, index }) {
                                 : 'Not available'
                         }
                     />
+
                 </div>
 
                 {/* EXTRA INFO */}
-                <div className="mt-3 flex flex-col gap-2 border-t border-slate-100 pt-3 sm:flex-row sm:items-center sm:justify-between">
+                <div className="mt-2 flex flex-col gap-1.5 border-t border-slate-100 pt-2 sm:mt-3 sm:flex-row sm:items-center sm:justify-between">
+
                     <div>
-                        <span className="text-[8px] font-bold uppercase tracking-wider text-slate-400 sm:text-[9px]">
+                        <span className="text-[7px] font-bold uppercase tracking-wider text-slate-400 sm:text-[8px]">
                             Current Status
                         </span>
 
-                        <p className="mt-0.5 text-[10px] font-semibold text-slate-700 sm:text-xs">
+                        <p className="mt-0.5 text-[9px] font-semibold text-slate-700 sm:text-[10px]">
                             {status === 'Confirmed'
                                 ? 'Your relocation request has been confirmed.'
                                 : status === 'Rejected'
@@ -447,11 +469,13 @@ function BookingCard({ booking, index }) {
 
                     <Link
                         to="/contact"
-                        className="text-[10px] font-bold text-violet-600 transition-colors hover:text-orange-500 sm:text-xs"
+                        className="text-[9px] font-bold text-violet-600 transition-colors hover:text-orange-500 sm:text-[10px]"
                     >
                         Need help?
                     </Link>
+
                 </div>
+
             </div>
         </motion.article>
     )
@@ -467,11 +491,11 @@ function LocationBox({ label, value, right = false }) {
             className={`min-w-0 flex-1 ${right ? 'sm:text-right' : ''
                 }`}
         >
-            <p className="text-[8px] font-bold uppercase tracking-wider text-slate-400 sm:text-[9px]">
+            <p className="text-[7px] font-bold uppercase tracking-wider text-slate-400 sm:text-[8px]">
                 {label}
             </p>
 
-            <p className="mt-0.5 break-words text-[10px] font-bold leading-4 text-slate-800 sm:text-xs">
+            <p className="mt-0.5 break-words text-[9px] font-bold leading-3.5 text-slate-800 sm:text-[10px]">
                 {value || 'Not specified'}
             </p>
         </div>
@@ -484,12 +508,12 @@ function LocationBox({ label, value, right = false }) {
 
 function DetailBox({ label, value }) {
     return (
-        <div className="rounded-xl border border-slate-100 bg-white p-2.5 sm:p-3">
-            <p className="text-[8px] font-bold uppercase tracking-wider text-slate-400 sm:text-[9px]">
+        <div className="rounded-lg border border-slate-100 bg-white p-2 sm:p-2.5">
+            <p className="text-[7px] font-bold uppercase tracking-wider text-slate-400 sm:text-[8px]">
                 {label}
             </p>
 
-            <p className="mt-1 break-words text-[10px] font-bold leading-4 text-slate-800 sm:text-xs">
+            <p className="mt-0.5 break-words text-[9px] font-bold leading-3.5 text-slate-800 sm:text-[10px]">
                 {value}
             </p>
         </div>
@@ -503,21 +527,22 @@ function DetailBox({ label, value }) {
 function EmptyState({ search }) {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            className="rounded-2xl border border-dashed border-violet-200 bg-gradient-to-br from-violet-50/70 via-white to-orange-50/70 px-4 py-10 text-center sm:rounded-3xl sm:px-8 sm:py-14"
+            className="rounded-xl border border-dashed border-violet-200 bg-gradient-to-br from-violet-50/70 via-white to-orange-50/70 px-4 py-8 text-center sm:rounded-2xl sm:px-6 sm:py-10"
         >
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-100 text-xl font-black text-violet-600 sm:h-16 sm:w-16">
+
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-lg font-black text-violet-600 sm:h-14 sm:w-14">
                 {search ? '?' : '0'}
             </div>
 
-            <h2 className="mt-4 text-lg font-black text-slate-900 sm:text-xl">
+            <h2 className="mt-3 text-base font-black text-slate-900 sm:text-lg">
                 {search
                     ? 'No bookings found'
                     : 'No bookings yet'}
             </h2>
 
-            <p className="mx-auto mt-2 max-w-md text-xs leading-5 text-slate-500 sm:text-sm">
+            <p className="mx-auto mt-1.5 max-w-md text-[10px] leading-4 text-slate-500 sm:text-xs">
                 {search
                     ? 'Try searching with another booking ID, service name or location.'
                     : 'Start your first relocation request and track its status from this page.'}
@@ -525,10 +550,11 @@ function EmptyState({ search }) {
 
             <Link
                 to="/booking"
-                className="mt-5 inline-flex rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-2.5 text-xs font-bold text-white shadow-lg shadow-violet-500/20 transition-all duration-300 hover:-translate-y-0.5 sm:text-sm"
+                className="mt-4 inline-flex rounded-lg bg-gradient-to-r from-violet-600 to-fuchsia-600 px-4 py-2 text-[10px] font-bold text-white shadow-md shadow-violet-500/20 transition-all duration-300 hover:-translate-y-0.5 sm:text-xs"
             >
                 Create Booking
             </Link>
+
         </motion.div>
     )
 }
@@ -565,26 +591,30 @@ function InfoCard({
 
     return (
         <motion.div
-            whileHover={{ y: -3 }}
-            className={`rounded-2xl border bg-white p-4 shadow-sm sm:rounded-3xl sm:p-5 ${theme.border}`}
+            whileHover={{ y: -2 }}
+            className={`rounded-xl border bg-white p-3 shadow-sm sm:rounded-2xl sm:p-4 ${theme.border}`}
         >
-            <div className="flex items-center gap-3">
+
+            <div className="flex items-center gap-2.5">
+
                 <span
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-[9px] font-black sm:h-9 sm:w-9 ${theme.number}`}
+                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[8px] font-black sm:h-8 sm:w-8 ${theme.number}`}
                 >
                     {number}
                 </span>
 
                 <h3
-                    className={`text-xs font-black sm:text-sm ${theme.title}`}
+                    className={`text-[10px] font-black sm:text-xs ${theme.title}`}
                 >
                     {title}
                 </h3>
+
             </div>
 
-            <p className="mt-3 text-[10px] leading-5 text-slate-500 sm:text-xs">
+            <p className="mt-2 text-[9px] leading-4 text-slate-500 sm:text-[10px]">
                 {text}
             </p>
+
         </motion.div>
     )
 }
